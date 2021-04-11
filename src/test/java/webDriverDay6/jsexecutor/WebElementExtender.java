@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.internal.WrapsDriver;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,11 +24,11 @@ public class WebElementExtender {
        driver.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, attributeName, value);
    }//element.setAttribute(attributeName,value)
    
-   public static void highlightElement(WebElement element) {
+   public static void highlightElement(WebElement element, WebDriver driver) {
 	    for (int i = 0; i < 5; i++) {
-	    	WrapsDriver wrappedElement = (WrapsDriver) element;
-	    	JavascriptExecutor driver = (JavascriptExecutor) wrappedElement.getWrappedDriver();
-	    	driver.executeScript("arguments[0].setAttribute('style', arguments[1]);",
+	    	//WrapsDriver wrappedElement = (WrapsDriver) element;
+	    	JavascriptExecutor js = (JavascriptExecutor)driver;
+	    	js.executeScript("arguments[0].setAttribute('style', arguments[1]);",
 	                element, "color: green; border: 2px solid green;");
 	    	//element.setAttribute('style',"color: green; border: 2px solid green;");
 	    	try {
@@ -37,7 +38,7 @@ public class WebElementExtender {
 				e.printStackTrace();
 			}
 	    	//element.setAttribute('style',"color: green;border: 2px solid green;"
-	    	driver.executeScript("arguments[0].setAttribute('style', arguments[1]);",
+	    	js.executeScript("arguments[0].setAttribute('style', arguments[1]);",
 	                element, "");
 	    	try {
 				Thread.sleep(250);

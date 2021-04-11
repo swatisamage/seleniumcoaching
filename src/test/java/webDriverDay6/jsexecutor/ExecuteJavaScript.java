@@ -24,7 +24,7 @@ public class ExecuteJavaScript {
 		long links = (Long) js.executeScript("var links = document.getElementsByTagName('A'); return links.length");
 	//	assertEquals(42, links);
 		WebElement searchLink = driver.findElement(By.id("lst-ib"));
-		WebElementExtender.highlightElement(searchLink);	
+		WebElementExtender.highlightElement(searchLink, driver);	
 		//driver.close();
 			
 	}
