@@ -74,7 +74,7 @@ public void setUp() throws Exception {
 
 
   @Test
-  public void testTCWikiKetantest() {
+  public void testTCWikiKetantest1() {
     	  driver.get(baseUrl);
 //    driver.findElement(By.cssSelector("strong")).click();
     
