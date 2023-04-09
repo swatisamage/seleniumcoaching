@@ -20,11 +20,11 @@ public class AWikiWD {
 public void setUp() throws Exception {
   
 	/*System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ketan\\OneDrive\\Selenium\\workspace\\seleniumcoaching\\src\\test\\resources\\chromedriver.exe");
-  	driver = new ChromeDriver();
+  	 driver = new FirefoxDriver();
   	*/
 	  WebDriverManager.chromedriver().setup();
-	  driver = new ChromeDriver();
-	//  driver = new FirefoxDriver();
+	  //driver = new ChromeDriver();
+	 driver = new FirefoxDriver();
     baseUrl = "http://www.wikipedia.org/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
